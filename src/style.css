@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'Inter', -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    system-ui,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -29,24 +36,26 @@ body {
 
 /* Notion soft layered shadows */
 .shadow-soft-sm {
-  box-shadow: rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px, 
-              rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px, 
-              rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px, 
-              rgba(0, 0, 0, 0.04) 0px 4px 18px;
+  box-shadow:
+    rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px,
+    rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px,
+    rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px,
+    rgba(0, 0, 0, 0.04) 0px 4px 18px;
 }
 
 .shadow-soft-lg {
-  box-shadow: rgba(0,0,0,0.01) 0 0.175px 1.041px,
-              rgba(0,0,0,0.02) 0 0.8px 2.925px,
-              rgba(0,0,0,0.03) 0 4px 12px,
-              rgba(0,0,0,0.05) 0 23px 52px;
+  box-shadow:
+    rgba(0, 0, 0, 0.01) 0 0.175px 1.041px,
+    rgba(0, 0, 0, 0.02) 0 0.8px 2.925px,
+    rgba(0, 0, 0, 0.03) 0 4px 12px,
+    rgba(0, 0, 0, 0.05) 0 23px 52px;
 }
 
 /* Custom typography to match Notion's tight/heavy display & clean body */
 .display-1 {
   font-size: 64px;
   font-weight: 700;
-  line-height: 1.0;
+  line-height: 1;
   letter-spacing: -2.125px;
 }
 
@@ -119,5 +128,3 @@ body {
   line-height: 1.33;
   letter-spacing: 0.125px;
 }
-
-
