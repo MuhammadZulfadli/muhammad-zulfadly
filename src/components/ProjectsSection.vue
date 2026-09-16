@@ -48,6 +48,16 @@ const projects = [
     text: "text-canvas",
     img: "salut.png",
   },
+  {
+    title: "LuxSpace",
+    description:
+      "A Furniture Landing page for home living product like IKEA, Informa, and Dekoruma",
+    stack: ["Vue", "Tailwind"],
+    link: "#",
+    bg: "bg-accent-orange",
+    text: "text-canvas",
+    img: "luxspace.png",
+  },
 ];
 
 const getImageUrl = (name) => {
