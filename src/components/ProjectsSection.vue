@@ -84,52 +84,28 @@ const getImageUrl = (name) => {
 </script>
 
 <template>
-    <section
-        id="projects"
-        class="w-full py-24 border-t border-hairline bg-canvas-soft"
-    >
-        <div class="max-w-7xl mx-auto px-6 md:px-8">
-            <div class="mb-12">
-                <span
-                    class="eyebrow text-primary font-semibold tracking-[0.125px]"
-                    >Portfolio</span
-                >
-                <h2 class="heading-1 text-ink mt-2 mb-4">Featured Projects</h2>
-                <p class="body-md text-ink-secondary">
-                    Selected work that demonstrates my technical capabilities
-                    and design sense.
-                </p>
+    <section id="projects" class="section section--warm">
+        <div class="section-inner">
+            <div class="section-heading">
+                <span class="section-kicker">Portfolio</span>
+                <h2 class="section-title">Featured projects</h2>
+                <p class="section-copy">Selected work that demonstrates my technical capabilities and design sense.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="project-grid">
                 <div
                     v-for="(project, index) in projects"
                     :key="index"
-                    class="group flex flex-col bg-canvas rounded-lg border border-hairline overflow-hidden shadow-soft-sm hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-300"
+                    class="project-card"
                 >
-                    <div
-                        class="h-56 relative overflow-hidden border-b border-hairline bg-canvas-soft"
-                    >
+                    <div class="project-card__image">
                         <img
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             :src="getImageUrl(project.img)"
                             :alt="`${project.title} preview`"
                         />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent opacity-80 group-hover:opacity-50 transition-opacity duration-300"
-                        ></div>
-                        <span
-                            class="absolute left-4 top-4 eyebrow text-[10px] text-canvas bg-black/35 backdrop-blur-md px-3 py-1.5 rounded-full border border-canvas/20"
-                        >
-                            {{ project.type }}
-                        </span>
+                        <span class="project-card__type">{{ project.type }}</span>
                     </div>
-
-                    <!-- Card Body Details -->
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3
-                            class="heading-3 text-ink mb-2 group-hover:text-primary transition-colors leading-tight"
-                        >
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">
                             <a
                                 :href="project.link"
                                 target="_blank"
@@ -138,33 +114,24 @@ const getImageUrl = (name) => {
                                 {{ project.title }}
                             </a>
                         </h3>
-                        <p
-                            class="body-sm text-ink-secondary mb-6 flex-grow leading-relaxed"
-                        >
-                            {{ project.description }}
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 mt-auto">
+                        <p class="project-card__description">{{ project.description }}</p>
+                        <div class="tag-list">
                             <span
                                 v-for="tag in project.stack"
                                 :key="tag"
-                                class="eyebrow text-[9px] bg-canvas-soft text-ink-muted px-2 py-1 rounded border border-hairline hover:text-ink transition-colors"
+                                class="tag"
                             >
                                 {{ tag }}
                             </span>
                         </div>
-
                         <a
                             :href="project.link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-all duration-200 group-hover:gap-2"
+                            class="project-card__link"
                         >
                             View project
-                            <span
-                                class="transition-transform duration-200 group-hover:translate-x-1"
-                                >→</span
-                            >
+                            <span aria-hidden="true">→</span>
                         </a>
                     </div>
                 </div>
