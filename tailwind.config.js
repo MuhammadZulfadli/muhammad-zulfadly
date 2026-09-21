@@ -9,6 +9,8 @@ export default {
         "surface-raised": "#E8E7E5",
         ink: "#08101F",
         body: "#6C757D",
+        "ink-muted": "#59616A",
+        "border-soft": "#DBDBDA",
         primary: "#000000",
         "on-primary": "#FFFFFF",
         hairline: "#E9E9E9",

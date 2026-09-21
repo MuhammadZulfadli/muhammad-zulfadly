@@ -16,8 +16,6 @@ const projects = [
             "GraphQL",
         ],
         link: "https://srs5g.ut.ac.id/",
-        bg: "bg-accent-orange",
-        text: "text-canvas",
         img: "srs.png",
     },
     {
@@ -27,8 +25,6 @@ const projects = [
         type: "Academic System",
         stack: ["Vue.js", "Tailwind", "Nest JS", "REST API", "GraphQL"],
         link: "https://bimon.ut.ac.id/",
-        bg: "bg-accent-orange",
-        text: "text-canvas",
         img: "bimon.png",
     },
     {
@@ -38,8 +34,6 @@ const projects = [
         type: "Information System",
         stack: ["Vue.js", "Tailwind", "REST API", "GraphQL", "Chart JS"],
         link: "https://salut.ut.ac.id/",
-        bg: "bg-accent-orange",
-        text: "text-canvas",
         img: "salut.png",
     },
     {
@@ -49,8 +43,6 @@ const projects = [
         type: "Tutor Portal",
         stack: ["Nuxt.js", "Tailwind", "Pinia"],
         link: "https://myut-tips.ut.ac.id/",
-        bg: "bg-accent-teal",
-        text: "text-canvas",
         img: "myut-tips.png",
     },
     {
@@ -60,8 +52,6 @@ const projects = [
         type: "Monitoring System",
         stack: ["Vue.js", "Tailwind", "Vite", "Chart JS"],
         link: "https://aksara.ut.ac.id/",
-        bg: "bg-accent-purple",
-        text: "text-accent-purple-deep",
         img: "aksara.png",
     },
 
@@ -72,8 +62,6 @@ const projects = [
         type: "Landing Page",
         stack: ["Vue.js", "Tailwind"],
         link: "https://furnites.netlify.app",
-        bg: "bg-accent-orange",
-        text: "text-canvas",
         img: "luxspace.png",
     },
 ];
@@ -84,28 +72,24 @@ const getImageUrl = (name) => {
 </script>
 
 <template>
-    <section id="projects" class="section section--warm">
-        <div class="section-inner">
-            <div class="section-heading">
-                <span class="section-kicker">Portfolio</span>
-                <h2 class="section-title">Featured projects</h2>
-                <p class="section-copy">Selected work that demonstrates my technical capabilities and design sense.</p>
+    <section id="projects" class="border-b border-hairline bg-surface py-[60px] sm:py-[100px]">
+        <div class="mx-auto w-[calc(100%-32px)] max-w-[1320px] sm:w-[calc(100%-48px)]">
+            <div class="mb-8 max-w-[660px] sm:mb-12">
+                <span class="mb-3 block font-mono text-xs font-bold uppercase tracking-[.04em] text-coral">Portfolio</span>
+                <h2 class="mb-4 font-display text-[clamp(29px,3vw,32px)] font-bold leading-[1.2] text-ink">Featured projects</h2>
+                <p class="m-0 text-base leading-normal text-ink-muted">
+                    Selected work that demonstrates my technical capabilities
+                    and design sense.
+                </p>
             </div>
-            <div class="project-grid">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <div
                     v-for="(project, index) in projects"
                     :key="index"
-                    class="project-card"
+                    class="group flex min-w-0 flex-col overflow-hidden rounded-card bg-canvas shadow-elevation transition-transform duration-200 hover:-translate-y-1"
                 >
-                    <div class="project-card__image">
-                        <img
-                            :src="getImageUrl(project.img)"
-                            :alt="`${project.title} preview`"
-                        />
-                        <span class="project-card__type">{{ project.type }}</span>
-                    </div>
-                    <div class="project-card__body">
-                        <h3 class="project-card__title">
+                    <div class="flex flex-1 flex-col p-6">
+                        <h3 class="mb-3 font-display text-xl font-semibold leading-tight text-ink">
                             <a
                                 :href="project.link"
                                 target="_blank"
@@ -114,12 +98,14 @@ const getImageUrl = (name) => {
                                 {{ project.title }}
                             </a>
                         </h3>
-                        <p class="project-card__description">{{ project.description }}</p>
-                        <div class="tag-list">
+                        <p class="mb-6 line-clamp-4 text-sm leading-[1.55] text-ink-muted">
+                            {{ project.description }}
+                        </p>
+                        <div class="flex flex-wrap gap-2">
                             <span
                                 v-for="tag in project.stack"
                                 :key="tag"
-                                class="tag"
+                                class="rounded-md border border-hairline px-2.5 py-1.5 font-mono text-xs text-slate"
                             >
                                 {{ tag }}
                             </span>
@@ -128,10 +114,10 @@ const getImageUrl = (name) => {
                             :href="project.link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="project-card__link"
+                            class="mt-6 inline-flex w-fit gap-2 font-display text-sm font-semibold text-ink transition-colors hover:text-coral"
                         >
                             View project
-                            <span aria-hidden="true">→</span>
+                            <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
                         </a>
                     </div>
                 </div>
